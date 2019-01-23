@@ -32,6 +32,7 @@ RUN service mysql start && \
     sleep 3 && \
     mysql -uroot -pvulnerables -e "CREATE USER app@localhost IDENTIFIED BY 'vulnerables';CREATE DATABASE dvwa;GRANT ALL privileges ON dvwa.* TO 'app'@localhost;"
 
+RUN apt-get update && apt-get -y install ca-certificates
 ADD https://get.aquasec.com/microscanner .
 RUN chmod +x microscanner
 RUN ./microscanner YWY1NTdkOWJkOTI0
