@@ -29,12 +29,12 @@ stages:
           $(tag)
     - task: aquasecScanner@4
       inputs:
-        image: 'aquasec/scanner:4.6'
+        image: '(Build.Repository.Name):(Build.BuildId)'
         scanType: 'local'
         register: false
         hideBase: false
         showNegligible: false
         windowsScannerVersion: '4.2.0'
         scanner: 'registry.aquasec.com/scanner:4.6'
-        registry: 'registry.aquasec.com'
+        runOptions: '--user stephen.giguere@aquasec.com --password  ''zJfF5^wLacliF0&1'''
         connection: 'Aqua Image Scanning'
