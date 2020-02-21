@@ -9,7 +9,7 @@ resources:
 - repo: self
 
 variables:
-  tag: '$(Build.BuildId)'
+  tag: 'docker-vulnerable-dvwa:$(Build.BuildId)'
 
 stages:
 - stage: Build
@@ -40,7 +40,7 @@ stages:
         command: 'login'
     - task: aquasecScanner@4
       inputs:
-        image: '$(Build.Name):$(Build.BuildId)'
+        image: 'docker-vulnerable-dvwa:$(Build.BuildId)'
         scanType: 'local'
         register: false
         hideBase: false
