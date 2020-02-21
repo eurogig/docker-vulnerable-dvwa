@@ -33,7 +33,7 @@ stages:
         command: 'login'
     - task: aquasecScanner@4
       inputs:
-        image: '(Build.Repository.Name):(Build.BuildId)'
+        image: '$(Build.Repository.Name):$(Build.BuildId)'
         scanType: 'local'
         register: false
         hideBase: false
