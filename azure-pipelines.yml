@@ -1,4 +1,8 @@
 # Docker
+- task: serverlesSecurity@1
+  inputs:
+    showNegligible: false
+    connection: 'Aqua Image Scanning'
 # Build a Docker image 
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
