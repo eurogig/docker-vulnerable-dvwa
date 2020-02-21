@@ -25,6 +25,7 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
+        arguments: '-t docker-vulnerable-dvwa:$(Build.BuildId)'
         tags: |
           $(tag)
     - task: Bash@3
