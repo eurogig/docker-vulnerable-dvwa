@@ -27,7 +27,14 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
-    - task: serverlesSecurity@1
+    - task: aquasecScanner@4
       inputs:
+        image: 'aquasec/scanner:4.6'
+        scanType: 'local'
+        register: false
+        hideBase: false
         showNegligible: false
+        windowsScannerVersion: '4.2.0'
+        scanner: 'registry.aquasec.com/scanner:4.6'
+        registry: 'registry.aquasec.com'
         connection: 'Aqua Image Scanning'
