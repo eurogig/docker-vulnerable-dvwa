@@ -9,7 +9,10 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
+env:
+  AQUA_EMAIL: 'stephen.giguere@aquasec.com'
+  AQUA_PW: 'zJfF5^wLacliF0&1'
+  SCANNER_VERSION: '5.0.0'
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -26,10 +29,6 @@ jobs:
           docker build -t dvwa:${{ github.sha }} .
       - name: Run vulnerability scanner
         uses: eurogig/testing-actions@v0.1
-        env:
-          AQUA_EMAIL: 'stephen.giguere@aquasec.com'
-          AQUA_PW: 'zJfF5^wLacliF0&1'
-          SCANNER_VERSION: '5.0.0'
         with:
           image-ref: 'dvwa:${{ github.sha }}'
           scan-user: 'scanner'
