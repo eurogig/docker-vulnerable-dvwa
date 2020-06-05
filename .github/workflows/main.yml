@@ -25,7 +25,7 @@ jobs:
         run: |
           docker build -t dvwa:${{ github.sha }} .
       - name: Run vulnerability scanner
-        uses: eurogig/testing-action@v0.1
+        uses: eurogig/testing-actions@v0.1
         env:
           AQUA_EMAIL: 'stephen.giguere@aquasec.com'
           AQUA_PW: 'zJfF5^wLacliF0&1'
