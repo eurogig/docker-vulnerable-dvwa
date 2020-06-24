@@ -48,4 +48,4 @@ stages:
         showNegligible: false
         windowsScannerVersion: '4.2.0'
         scanner: 'registry.aquasec.com/scanner:5.0'
-        connection: 'Aqua Scanner'
+        connection: 'Aqua'
