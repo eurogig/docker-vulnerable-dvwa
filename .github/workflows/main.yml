@@ -29,4 +29,4 @@ jobs:
           image-ref: 'dvwa:${{ github.sha }}'
           scan-user: 'scanner'
           scan-pw: 'scanner2020'
-          aqua-host: 'http://aquasec-demo1535-vm0.eastus.cloudapp.azure.com'
+          aqua-host: 'http://aquasec-demo1555-vm0.eastus.cloudapp.azure.com'
