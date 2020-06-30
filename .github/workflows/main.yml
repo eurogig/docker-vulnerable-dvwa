@@ -25,16 +25,10 @@ jobs:
         run: |
           docker build -t dvwa:${{ github.sha }} .
       - name: Run vulnerability scanner
-        env:
-          AQUA_EMAIL: 'stephen.giguere@aquasec.com'
-          AQUA_PW: 'zJfF5^wLacliF0&1'
-          SCANNER_VERSION: '5.0.0'
         uses: eurogig/testing-actions@v0.1
         with:
-          AQUA_EMAIL: 'stephen.giguere@aquasec.com'
-          AQUA_PW: 'zJfF5^wLacliF0&1'
-          SCANNER_VERSION: '5.0.0'
           image-ref: 'dvwa:${{ github.sha }}'
           scan-user: 'scanner'
           scan-pw: 'scanner2020'
-          aqua-host: 'http://aquasec-demo1495-vm0.eastus.cloudapp.azure.com'
+          aqua-version: '5.0'
+          aqua-host: 'http://aquasec-demo1535-vm0.eastus.cloudapp.azure.com'
