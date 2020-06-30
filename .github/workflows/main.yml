@@ -24,7 +24,7 @@ jobs:
         run: |
           docker build -t dvwa:${{ github.sha }} .
       - name: Run vulnerability scanner
-        uses: eurogig/testing-actions@v5.0test
+        uses: eurogig/testing-actions@master
         with:
           image-ref: 'dvwa:${{ github.sha }}'
           scan-user: 'scanner'
