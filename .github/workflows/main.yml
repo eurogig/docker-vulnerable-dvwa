@@ -27,8 +27,8 @@ jobs:
         uses: eurogig/testing-actions@master
         with:
           image-ref: 'dvwa:${{ github.sha }}'
-          scan-user: 'scanner'
-          scan-pw: 'scanner2020'
+          scan-user: ${{ secrets.AQUA_USER }}
+          scan-pw: ${{ secrets.AQUA_PW }}
           aqua-host: 'http://aquasec-demo1555-vm0.eastus.cloudapp.azure.com'
       - name: Upload results
         uses: actions/upload-artifact@v2
